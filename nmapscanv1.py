@@ -16,7 +16,7 @@ def nmap_scan(ip):
 	print('Open ports are $ports :'+ports)
 #	print(path)
 	try:
-		res = bash('nmap -T4 -sV -Pn  -sC -p%s %s --min-rate 10000 -oA %s '%(ports,ip,ip))
+		res = bash('nmap -T4 -sV -Pn  -sC -p%s %s --min-rate 10000 -oN %s '%(ports,ip,ip))
 		print(res)
 	except Exception:
 		pass
@@ -28,7 +28,7 @@ def nmap_scanv(ip):
 	print('Open ports are $ports :'+ports)
 #	print(path)
 	try:
-		res = bash('nmap -T4 -sV -Pn --script vuln -sC -p%s %s --min-rate 10000 -oA %s+vuln'%(ports,ip,ip))
+		res = bash('nmap -T4 -sV -Pn --script vuln -sC -p%s %s --min-rate 10000 -oN %s+vuln'%(ports,ip,ip))
 		print(res)
 	except Exception:
 		pass
